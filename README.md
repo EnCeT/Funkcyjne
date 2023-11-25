@@ -1,0 +1,2 @@
+# Funkcyjne
+Programowanie funkcyjne UJ
