@@ -55,15 +55,16 @@ ktoraCwiartka xs | i xs == maximum list = 1
 
 --Zad 6
 podlisty :: [Integer] -> [[Integer]]
-podlisty [] = []
-podlisty xs | n < length xs - 1 = 
-podlisty xs | otherwise = xs : podlisty mniejsza n + 1 hs
-            where 
-                mniejsza n xs = m splitAt n - 1 xs
-                m (xs,ys) = xs ++ drop 0 ys
--- pokolei usuwać elementy z listy i mergeować a później to samo dla tabeli o 1 mniejszej
+podlisty [] = [[]]
+podlisty (x:xs) = [x : podlista | podlista <- podlisty xs] ++ podlisty xs
 
---Zad 7
+islenghtItEq :: Integer -> [Integer] -> Bool
+islenghtItEq n xs = n == fromIntegral(length xs)  
+
+podlistyDlugosci :: Integer -> [Integer] -> [[Integer]]
+podlistyDlugosci n xs = filter (islenghtItEq n ) (podlisty xs)
+
+--Zad 7 
 przeksztalcListe :: (Int -> Int) -> [Int] -> [Int]
 przeksztalcListe f [x] = f x : []
 przeksztalcListe f (x:xs) = f x : przeksztalcListe f xs
