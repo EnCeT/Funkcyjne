@@ -1,5 +1,3 @@
-import System.Win32 (xBUTTON1, cOLOR_ACTIVEBORDER, aCCESS_SYSTEM_SECURITY)
-import qualified Control.Applicative as itp
 --złożenia funkcji 
 
 iter :: Integer -> (a -> a) -> (a -> a)
