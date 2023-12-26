@@ -26,7 +26,7 @@ rekdef :: (a -> a) -> a -> (Integer -> a)
 rekdef h c 0 = c
 rekdef h c n = h (rekdef h c (n - 1))
 
-silnia = scd . rekdef (\(n,acc) -> (n + 1, (n + 1) * acc))
+-- silnia = scd.rekdef (\(n,acc) -> (n + 1, (n + 1) * acc))
 
 czypusta :: Eq a => [a] -> Bool
 czypusta x = (x == [])
