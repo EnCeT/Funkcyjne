@@ -1,4 +1,3 @@
-import qualified Graphics.Win32 as Zad
 --Zad.1
 fl:: Float -> [Float] -> Float
 fl n x = foldl (/) n x

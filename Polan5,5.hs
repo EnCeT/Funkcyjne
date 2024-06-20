@@ -7,9 +7,14 @@ zip = zipWith (,)
 
 --Zad 8.
 sito :: [Integer] -> Integer -> [Integer]
-sito list n = if n*n <= last list then sito (filter (\x -> x `mod`n > 0 || x == n) list) (n + 1) else list
+sito list n = if n*n <= last list then sito (filter (\x -> x `mod` n > 0 || x == n) list) (n + 1) else list
 
 eratostenes:: Integer -> [Integer]
 eratostenes n = sito list 2
             where 
                 list = [2..n]
+
+
+--fajne sito
+sito2 :: [Integer] -> [Integer]
+sito2 (x:xs) = x : sito2 [y | y <- xs, y `mod` x > 0]
